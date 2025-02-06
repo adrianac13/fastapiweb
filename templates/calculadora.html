@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}Calcula tu Presupuesto{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="/static/CSS/calculadora.css">
+<style>
+  </style>
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Calcula tu Presupuesto</h1>
+    <form method="POST" action="/calculadora">
+        <div class="mb-3">
+            <label for="dias" class="form-label">Número de días</label>
+            <input type="number" id="dias" name="dias" class="form-control" min="1" required>
+        </div>
+        <div class="mb-3">
+            <label for="personas" class="form-label">Número de personas</label>
+            <input type="number" id="personas" name="personas" class="form-control" min="1" required>
+        </div>
+        <div class="mb-3">
+            <label for="destino" class="form-label">Selecciona un destino</label>
+            <select id="destino" name="destino" class="form-select" required>
+                <option value="Paris">París</option>
+                <option value="Roma">Roma</option>
+                <option value="Tokio">Tokio</option>
+                <option value="Nueva York">Nueva York</option>
+                <option value="Londres">Londres</option>
+                <option value="Sídney">Sídney</option>
+                <option value="Dubái">Dubái</option>
+                <option value="El Cairo">El Cairo</option>
+                <option value="Rio de Janeiro">Río de Janeiro</option>
+                <option value="Bangkok">Bangkok</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="calidad" class="form-label">Selecciona la calidad del viaje</label>
+            <select id="calidad" name="calidad" class="form-select" required>
+                <option value="Básica">Básica</option>
+                <option value="Estándar">Estándar</option>
+                <option value="Lujo">Lujo</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Calcular</button>
+    </form>
+    {% if presupuesto is not none %}
+    <div class="mt-5">
+        <h2 class="text-center">Presupuesto Calculado</h2>
+        <p class="text-center">Para {{ personas }} persona(s) durante {{ dias }} días en {{ destino }} con calidad {{ calidad }}:</p>
+        <p class="text-center"><strong>{{ presupuesto }}€</strong></p>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
+

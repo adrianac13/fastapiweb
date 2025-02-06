@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% block title %}Reservas{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="/static/CSS/formulario.css">
+
+<body class="formulario-body">
+  <div class="preferences-content mt-5">
+    <h1 class="text-center mb-4">Gestiona tus Reservas</h1>
+
+    <form method="post" action="/usuario/addreserva">
+      <div class="mb-3">
+        <label for="nombre_reserva" class="form-label">Nombre de la reserva</label>
+        <input type="text" id="nombre_reserva" name="nombre_reserva" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label for="destino" class="form-label">Destino</label>
+        <input type="text" id="destino" name="destino" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label for="duracion" class="form-label">Duración</label>
+        <input type="text" id="duracion" name="duracion" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label for="presupuesto" class="form-label">Presupuesto (€)</label>
+        <input type="number" id="presupuesto" name="presupuesto" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label for="fecha_reserva" class="form-label">Fecha de la reserva</label>
+        <input type="date" id="fecha_reserva" name="fecha_reserva" class="form-control" required>
+      </div>
+      <button type="submit" class="formulario-btn">Guardar Reserva</button>
+    </form>
+
+    {% if reservas %}
+    <h2 class="text-center mt-5">Reservas Guardadas</h2>
+    <table class="table table-striped mt-3">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Destino</th>
+          <th>Duración</th>
+          <th>Presupuesto</th>
+          <th>Fecha</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for reserva in reservas %}
+        <tr>
+          <td>{{ reserva.nombre_reserva }}</td>
+          <td>{{ reserva.destino }}</td>
+          <td>{{ reserva.duracion }}</td>
+          <td>{{ reserva.presupuesto }}€</td>
+          <td>{{ reserva.fecha_reserva }}</td>
+          <td>
+            <form method="post" action="/usuario/updatereserva/" class="d-inline">
+              <input type="hidden" name="id" value="{{ reserva.id }}">
+              
+              <label class="form-label">Nombre:</label>
+              <input type="text" name="nombre_reserva" value="{{ reserva.nombre_reserva }}" required class="form-control">
+
+              <label class="form-label">Destino:</label>
+              <input type="text" name="destino" value="{{ reserva.destino }}" required class="form-control">
+
+              <label class="form-label">Duración:</label>
+              <input type="text" name="duracion" value="{{ reserva.duracion }}" required class="form-control">
+
+              <label class="form-label">Presupuesto (€):</label>
+              <input type="number" name="presupuesto" value="{{ reserva.presupuesto }}" step="0.01" required class="form-control">
+
+              <label class="form-label">Fecha de la reserva:</label>
+              <input type="date" name="fecha_reserva" value="{{ reserva.fecha_reserva }}" required class="form-control">
+
+              <button class="btn btn-warning btn-sm" type="submit">Actualizar</button>
+            </form>
+
+            <form method="post" action="/usuario/deletereserva/" class="d-inline">
+              <input type="hidden" name="id" value="{{ reserva.id }}">
+              <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+            </form>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% endif %}
+  </div>
+</body>
+{% endblock %}

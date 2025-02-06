@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block title %}Destinos Destacados{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="/static/CSS/destacados.css">
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Destinos de la semana</h1>
+    <div id="destacadosCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/static/IMG/budapest.jpg" class="d-block w-100" alt="Destino 1">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Budapest</h5>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="/static/IMG/moscu.jpg" class="d-block w-100" alt="Destino 2">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Moscú</h5>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="/static/IMG/chile.jpg" class="d-block w-100" alt="Destino 3">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Santiago de Chile</h5>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#destacadosCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#destacadosCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+        </button>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <img src="/static/IMG/budapest.jpg" class="card-img-top" alt="Destino 1">
+                <div class="card-body">
+                    <h5 class="card-title">Budapest</h5>
+                    <a href="https://www.viajeroscallejeros.com/guia-de-budapest/" class="btn btn-primary" target="_blank">Ver más</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="/static/IMG/moscu.jpg" class="card-img-top" alt="Destino 2">
+                <div class="card-body">
+                    <h5 class="card-title">Moscú</h5>
+                    <a href="https://thetravelvoiceblog.com/guia-completa-de-moscu/" class="btn btn-primary" target="_blank">Ver más</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="/static/IMG/chile.jpg" class="card-img-top" alt="Destino 3">
+                <div class="card-body">
+                    <h5 class="card-title">Santiago de Chile</h5>
+                    <a href="https://www.visitchile.com/es/guias-turisticas/santiago-y-alrededores/" class="btn btn-primary" target="_blank">Ver más</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

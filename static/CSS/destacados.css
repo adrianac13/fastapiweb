@@ -1,0 +1,56 @@
+body {
+    background: #77b2e6; 
+    margin: 0;
+    font-family: Arial, sans-serif; 
+}
+
+h1.text-center {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700; 
+    font-size: 2.5rem; 
+    color: #333; 
+}
+
+.carousel-item {
+    height: 400px;
+    object-fit: cover;
+    background-color: #e9ecef81;
+}
+
+.carousel-caption {
+    font-size: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.315);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.card {
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #6c757d;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    font-weight: bold;
+}

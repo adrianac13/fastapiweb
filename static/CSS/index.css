@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.navbar {
+    background-color: #343a40;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    font-size: 1rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar .menu {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar .menu a:hover {
+    color: #f8f9fa;
+}
+
+.title-bar {
+    background-color: #555555;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    width: 100%;
+    position: fixed;
+    top: 60px;
+    z-index: 9;
+}
+
+.fullscreen-img {
+    position: fixed;
+    top: 100px; 
+    left: 0;
+    width: 100%;
+    height: calc(100% - 100px); 
+    object-fit: cover; 
+}
+
+.country-link {
+    position: absolute;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    text-decoration: none;
+    transform: translate(-50%, -50%);
+    transition: background-color 0.3s;
+}
+
+.country-link:hover {
+    background-color: rgba(0, 123, 255, 0.8);
+}
+
+.france {
+    top: 34%;
+    left: 50%;
+}
+
+.usa {
+    top: 40%;
+    left: 20%;
+}
+
+.australia {
+    top: 80%;
+    left: 91%;
+}
+
+.egypt {
+    top: 49%;
+    left: 59%;
+}
+.germany {
+    top: 33%;
+    left: 53%;
+}
+
+.italy {
+    top: 39%;
+    left: 55%;
+}
+
+.japan {
+    top: 40%;
+    left: 93%;
+}
+
+.brazil {
+    top: 70%;
+    left: 35%;
+}
+
+.canada {
+    top: 30%;
+    left: 15%;
+}
+
+.russia {
+    top: 30%;
+    left: 62%;
+}
+
+.china {
+    top: 42%;
+    left: 81%;
+}
+
+.south_africa {
+    top: 82%;
+    left: 58%;
+}
+
+.mexico {
+    top: 50%;
+    left: 18%;
+}
+
+.india {
+    top: 52%;
+    left: 74%;
+}
+.spain {
+    top: 39%;
+    left: 49%;
+}
+
+.uk {
+    top: 31%;
+    left: 49%;
+}
+
+.hungary {
+    top: 35%;
+    left: 56%;
+}
+
+.argentina {
+    top: 83%;
+    left: 31%;
+}
+
+.chile {
+    top: 85%;
+    left: 28%;
+}
+
+.morocco {
+    top: 45%;
+    left: 48%;
+}
